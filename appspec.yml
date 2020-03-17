@@ -1,12 +1,8 @@
 version: 0.0
 os: linux
-env: 
-  parameter-store:
-    SOURCE: /index.html
-    DESTINATION: /var/www/html/
 files:
-  - source: $SOURCE
-    destination: $DESTINATION
+  - source: /index.html
+    destination: /var/www/html/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
