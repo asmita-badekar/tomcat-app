@@ -1,8 +1,12 @@
 version: 0.0
 os: linux
+env: 
+  parameter-store:
+    SOURCE: /index.html
+    DESTINATION: /var/www/html/
 files:
-  - source: /index.html
-    destination: /var/www/html/
+  - source: $SOURCE
+    destination: $DESTINATION
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
@@ -15,4 +19,3 @@ hooks:
     - location: scripts/stop_server
       timeout: 300
       runas: root
-
